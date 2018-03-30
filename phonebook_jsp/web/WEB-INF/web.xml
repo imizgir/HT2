@@ -19,5 +19,16 @@
         <url-pattern>/ManagePerson/</url-pattern>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ManagePhoneServlet</servlet-name>
+        <servlet-class>app.ManagePhoneServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ManagePhoneServlet</servlet-name>
+        <url-pattern>/ManagePhone/</url-pattern>
+        <url-pattern>/ManagePhone/*</url-pattern>
+    </servlet-mapping>
 </web-app>
 

@@ -21,10 +21,8 @@ public class DBWorker {
     private static DBWorker instance = null;
 
     // Метод для получения экземпляра класса (реализован Singleton).
-    public static DBWorker getInstance()
-    {
-        if (instance == null)
-        {
+    public static DBWorker getInstance() {
+        if (instance == null) {
             instance = new DBWorker();
         }
 
@@ -32,26 +30,21 @@ public class DBWorker {
     }
 
     // "Заглушка", чтобы экземпляр класса нельзя было получить напрямую.
-    private DBWorker()
-    {
+    private DBWorker() {
         // Просто "заглушка".
     }
 
     // Выполнение запросов на выборку данных.
-    public ResultSet getDBData(String query)
-    {
+    public ResultSet getDBData(String query) {
         Statement statement;
         Connection connect;
-        try
-        {
+        try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connect = DriverManager.getConnection(db_url);
             statement = connect.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             return resultSet;
-        }
-        catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e)
-        {
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
 
@@ -61,12 +54,10 @@ public class DBWorker {
     }
 
     // Выполнение запросов на модификацию данных.
-    public Integer changeDBData(String query)
-    {
+    public Integer changeDBData(String query) {
         Statement statement;
         Connection connect;
-        try
-        {
+        try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             connect = DriverManager.getConnection(db_url);
             statement = connect.createStatement();
@@ -74,14 +65,12 @@ public class DBWorker {
 
             // Получаем last_insert_id() для операции вставки.
             ResultSet rs = statement.getGeneratedKeys();
-            if (rs.next()){
+            if (rs.next()) {
                 this.last_insert_id = rs.getInt(1);
             }
 
             return this.affected_rows;
-        }
-        catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e)
-        {
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
 
@@ -91,13 +80,11 @@ public class DBWorker {
 
     // +++++++++++++++++++++++++++++++++++++++++++++++++
     // Геттеры и сеттеры.
-    public Integer getAffectedRowsCount()
-    {
+    public Integer getAffectedRowsCount() {
         return this.affected_rows;
     }
 
-    public Integer getLastInsertId()
-    {
+    public Integer getLastInsertId() {
         return this.last_insert_id;
     }
     // Геттеры и сеттеры.
