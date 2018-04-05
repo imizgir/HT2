@@ -9,6 +9,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <title>Управление данными о человеке</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/style.css">
+    <style>
+        <%@include file="/css/style.css"%>
+    </style>
 </head>
 <body>
 

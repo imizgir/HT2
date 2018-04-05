@@ -8,6 +8,10 @@
       xmlns:h="http://java.sun.com/jsf/html">
 <head>
     <title>Управление данными о телефоне</title>
+    <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/style.css">
+    <style>
+        <%@include file="/css/style.css"%>
+    </style>
 </head>
 <body>
 

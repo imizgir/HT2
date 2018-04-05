@@ -62,10 +62,10 @@ public class Person {
     // тогда допускается пустое значение.
     public boolean validateFMLNamePart(String fml_name_part, boolean empty_allowed) {
         if (empty_allowed) {
-            Matcher matcher = Pattern.compile("[\\w-]{0,150}").matcher(fml_name_part);
+            Matcher matcher = Pattern.compile("[\\p{L}+]{0,150}").matcher(fml_name_part);
             return matcher.matches();
         } else {
-            Matcher matcher = Pattern.compile("[\\w-]{1,150}").matcher(fml_name_part);
+            Matcher matcher = Pattern.compile("[\\p{L}+]{1,150}").matcher(fml_name_part);
             return matcher.matches();
         }
 

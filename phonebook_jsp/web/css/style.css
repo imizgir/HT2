@@ -1,0 +1,34 @@
+* {
+    outline: 0;
+}
+
+body {
+    background-color: rgb(240, 240, 240);
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Lato Medium", sans-serif;
+    font-size: 14px;
+    color: rgb(0, 17, 87);
+    font-variant: small-caps
+}
+
+input {
+    font-family: "Lato Medium", sans-serif;
+    font-size: 12px;
+    color: #6b0000;
+    font-variant: small-caps
+}
+
+textarea {
+    overflow: auto;
+}
+
+a {
+    color: #0b7800;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #8d8700;
+}
